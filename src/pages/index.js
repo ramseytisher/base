@@ -9,7 +9,7 @@ import Projects from "../components/projects"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div>some image or something goes here</div>
+    <div>this is the development branch</div>
     <Projects />
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
