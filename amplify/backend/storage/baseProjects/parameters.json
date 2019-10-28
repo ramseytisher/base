@@ -1,0 +1,5 @@
+{
+    "tableName": "baseProjects",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

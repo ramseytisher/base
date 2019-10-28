@@ -1,0 +1,14 @@
+query	ListProjects {
+listProjects {
+items{
+  id
+  description
+  price
+  publishDate
+}}}
+
+     mutation CreateProject {
+       createProject(input: {description: "Hello, world!", price: 15.00}) {
+         id
+       }
+     }
