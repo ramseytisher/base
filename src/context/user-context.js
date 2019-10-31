@@ -15,6 +15,7 @@ export const UserProvider = ({ children }) => {
     return (
         <UserContext.Provider value={{ loggedIn, setLoggedIn }}>
             {children}
+            <pre>{JSON.stringify(Auth.user, null, 2)}</pre>
         </UserContext.Provider>
     )
 }

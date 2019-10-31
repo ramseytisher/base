@@ -10,7 +10,7 @@ import { UserContext } from '../context/user-context'
 export default () => {
     const [show, setShow] = useState(false)
 
-    const {loggedIn, setLoggedIn} = useContext(UserContext)
+    const { loggedIn, setLoggedIn } = useContext(UserContext)
 
     if (loggedIn) {
         return (
@@ -29,7 +29,7 @@ export default () => {
                     onEsc={() => setShow(false)}
                     onClickOutside={() => setShow(false)}
                 >
-                    <Authenticator 
+                    <Authenticator
                         onStateChange={authState => {
                             authState === 'signedIn' && setLoggedIn(true)
                         }}
