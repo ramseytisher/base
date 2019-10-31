@@ -8,7 +8,6 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
       <h1>{mdx.frontmatter.title} | {mdx.id}</h1>
-      <h2>Body goes here</h2>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </Layout>
   )

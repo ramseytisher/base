@@ -27,7 +27,7 @@ export default () => {
                         slug
                         image {
                             childImageSharp {
-                                fluid(maxWidth: 600) {
+                                fluid(maxWidth: 400, maxHeight: 400) {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -72,10 +72,10 @@ export default () => {
     }
 
     return (
-        <Box direction="row-responsive" fill>
+        <Box direction="row-responsive">
             {projectsInfo.map((project) => (
                 <Link to={project.fields.slug} key={project.id}>
-                    <Box width="medium" animation="fadeIn">
+                    <Box animation="fadeIn" width="medium">
                         <Stack anchor="bottom">
                             <Img fluid={project.fields.image.childImageSharp.fluid} />
                             <Box background={{ "color": "dark-3", "opacity":"strong"}}>
