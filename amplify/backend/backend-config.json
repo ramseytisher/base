@@ -3,6 +3,10 @@
 		"baseProjects": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
+		},
+		"baseAccounts": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
 		}
 	},
 	"auth": {
@@ -30,5 +34,22 @@
 			}
 		}
 	},
-	"hosting": {}
+	"hosting": {},
+	"function": {
+		"baseAccountVerCre": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "baseAccounts",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	}
 }

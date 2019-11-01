@@ -79,7 +79,7 @@ export default () => {
                         <Stack anchor="bottom">
                             <Img fluid={project.fields.image.childImageSharp.fluid} />
                             <Box background={{ "color": "dark-3", "opacity":"strong"}}>
-                                <Text as="string" color="light-1" size="large">
+                                <Text color="light-1" size="large">
                                     {project.frontmatter.title}
                                 </Text>
                             </Box>

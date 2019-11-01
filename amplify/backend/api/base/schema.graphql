@@ -4,3 +4,45 @@ type Project @model {
   price: Float!
   publishDate: AWSDate
 }
+
+type Query {
+  listAccounts: AccountsConnection @function(name: "baseAccountVerCre-${env}")
+  getAccount(id: String!): Account @function(name: "baseAccountVerCre-${env}")
+}
+
+type Mutation {
+  createAccount(input: CreateAccountInput!): Account
+    @function(name: "baseAccountVerCre-${env}")
+  updateAccount(input: UpdateAccountInput!): Account
+    @function(name: "baseAccountVerCre-${env}")
+}
+
+type AccountsConnection {
+  items: [Account]
+}
+
+type Account {
+  id: String!
+  first: String
+  last: String
+  email: String!
+  has: [String]
+  emailList: Boolean!
+}
+
+input CreateAccountInput {
+  email: String!
+  first: String
+  last: String
+  has: [String]
+  emailList: Boolean!
+}
+
+input UpdateAccountInput {
+  id: String!
+  email: String!
+  first: String
+  last: String
+  has: [String]
+  emailList: Boolean!
+}

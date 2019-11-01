@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "storage": {
+            "baseAccounts": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}
