@@ -6,7 +6,7 @@ import Account from "../components/account"
 
 export default () => (
   <Layout>
-    <SEO title="Accounts" />
+    <SEO title="Account" />
     <h1>Account Info</h1>
     <Account />
   </Layout>

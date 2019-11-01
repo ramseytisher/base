@@ -77,7 +77,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "base-dev-20191028105823-deployment",
-					"S3Key": "amplify-builds/baseAccountVerCre-42733741554643475341-build.zip"
+					"S3Key": "amplify-builds/baseAccountVerCre-7153452b323344796e35-build.zip"
 				}
 			}
 		},

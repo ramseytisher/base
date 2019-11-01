@@ -37,6 +37,18 @@ const getAccount = async event => {
 
   const { Item: account } = await docClient.get(params).promise()
 
+  if(!account) {
+    console.log('ACCOUNT NOT FOUND!!')
+    const newItem = { ...event.arguments.input, id: event.arguments.id, email: "something@email.com", emailList: false }
+    const newParams = {
+      TableName: storageBaseAccountsName,
+      Item: newItem
+    }
+    
+    await docClient.put(newParams).promise()
+    
+    return newItem
+  } 
   return account
 }
 

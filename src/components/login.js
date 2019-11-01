@@ -10,13 +10,13 @@ import { UserContext } from '../context/user-context'
 export default () => {
     const [show, setShow] = useState(false)
 
-    const { loggedIn, setLoggedIn } = useContext(UserContext)
+    const { loggedIn, setLoggedIn, handleLogout } = useContext(UserContext)
 
     if (loggedIn) {
         return (
             <div>
                 <Link to="/account">Acccount info</Link>
-                <button onClick={() => Auth.signOut().then(() => setLoggedIn(false))}>logout</button>
+                <button onClick={() => Auth.signOut().then(() => handleLogout())}>logout</button>
             </div>
         )
     }

@@ -25,9 +25,9 @@ type Account {
   id: String!
   first: String
   last: String
-  email: String!
+  email: String
   has: [String]
-  emailList: Boolean!
+  emailList: Boolean
 }
 
 input CreateAccountInput {
