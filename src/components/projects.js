@@ -15,7 +15,7 @@ export default () => {
 
     const projectsContent = useStaticQuery(graphql`
     query ProjectsContentQuery {
-        allMdx {
+        allMdx (filter: {fileAbsolutePath: {regex: "\/index.mdx/"}}) {
             edges {
                 node {
                     id
@@ -40,12 +40,14 @@ export default () => {
 
     useEffect(() => {
         mergeProjectInfo()
-    })
+    }, [])
 
     async function mergeProjectInfo() {
         let merged = []
+        console.log('trying to merge ...')
         try {
             const projectsData = await API.graphql(graphqlOperation(ListProjects))
+            console.log('project data: ', projectsData)
             const content = projectsContent.allMdx.edges
             const dataItems = projectsData.data.listProjects.items
 

@@ -7,7 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
-    "aws-amplify": "^1.2.3",
+    "aws-amplify": "^1.2.5-unstable.10",
     "aws-amplify-react": "^2.5.4",
     "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.29",

@@ -19,6 +19,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             node,
             value: `./cover.jpg`
         })
+
+        createNodeField({
+            name: "gated",
+            node,
+            value:`./gated.mdx` 
+        })
     }
 }
 
@@ -27,12 +33,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions
     const pages = await graphql(`
         query {
-            allMdx {
+            allMdx(filter: {fileAbsolutePath: {regex: "\/index.mdx/"}}) {
                 edges {
                     node {
                         id
                         fields {
                             slug
+                            gated {
+                                id
+                            }
                         }
                     }
                 }
@@ -47,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/page-template.js`),
-            context: { id: node.id },
+            context: { id: node.id, gated: node.fields.gated.id },
         })
     })
 }
